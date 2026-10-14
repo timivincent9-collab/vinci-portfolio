@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
 
     <title>Olorunfemi Timilehin Vincent | Junior Web Developer</title>
 
@@ -22,81 +24,85 @@
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-pressed="false"
+            >
+                <span id="themeIcon" aria-hidden="true">☾</span>
+                <span id="themeLabel">Dark mode</span>
+            </button>
         </nav>
     </header>
 
     <main>
 
         <section id="hero">
+            <p class="hero-intro">Hello, I am Olorunfemi Timilehin Vincent</p>
 
-    <p class="hero-intro">Hello, I am Olorunfemi Timilehin Vincent</p>
-
-    <h2>Junior Web Developer</h2>
-
-    <p>
-        I build responsive, accessible and
-        user-friendly websites and web applications.
-    </p>
-
-    <div class="hero-buttons">
-        <a href="#projects">View My Projects</a>
-
-        <a href="#contact" class="secondary-button">
-            Contact Me
-        </a>
-    </div>
-
-</section>
-
-
-      <section id="about">
-
-    <h2>About Me</h2>
-
-    <div class="about-content">
-
-        <div class="about-text">
-            <p>
-                I'm an aspiring web developer constantly developing my
-                skills through hands-on projects and structured learning.
-            </p>
+            <h2>Junior Web Developer</h2>
 
             <p>
-                My journey started with <span style="color: blue;">HTML</span> and responsive web design, after which i moved to <span style="color: blue;">CSS</span>.
+                I build responsive, accessible and
+                user-friendly websites and web applications.
             </p>
 
-            <p>I'm currently expanding my knowledge of <span style="color: blue;">JavaScript, Python, APIs, Next.js and UI/UX Implementation</span> </p> 
-
-            <p>
-                I enjoy turning ideas into practical web applications
-                and learning how technology can be used to solve
-                real-world problems.
-            </p>
-        </div>
-
-        <div class="about-highlights">
-
-            <div class="highlight">
-                <h3>Currently Learning</h3>
-                <p>HTML • CSS • JavaScript</p>
+            <div class="hero-buttons">
+                <a href="#projects">View My Projects</a>
+                <a href="#contact" class="secondary-button">Contact Me</a>
             </div>
+        </section>
 
-            <div class="highlight">
-                <h3>Building With</h3>
-                <p>VS Code • Git • GitHub</p>
+        <section id="about">
+            <h2>About Me</h2>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm an aspiring web developer constantly developing my
+                        skills through hands-on projects and structured learning.
+                    </p>
+
+                    <p>
+                        My journey started with
+                        <span class="accent-text">HTML</span>
+                        and responsive web design, after which I moved to
+                        <span class="accent-text">CSS</span>.
+                    </p>
+
+                    <p>
+                        I'm currently expanding my knowledge of
+                        <span class="accent-text">JavaScript, Python, APIs,
+                        Next.js and UI/UX Implementation</span>.
+                    </p>
+
+                    <p>
+                        I enjoy turning ideas into practical web applications
+                        and learning how technology can be used to solve
+                        real-world problems.
+                    </p>
+                </div>
+
+                <div class="about-highlights">
+                    <div class="highlight">
+                        <h3>Currently Learning</h3>
+                        <p>HTML • CSS • JavaScript</p>
+                    </div>
+
+                    <div class="highlight">
+                        <h3>Building With</h3>
+                        <p>VS Code • Git • GitHub</p>
+                    </div>
+
+                    <div class="highlight">
+                        <h3>Goal</h3>
+                        <p>Become a professional web developer</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="highlight">
-                <h3>Goal</h3>
-                <p>Become a professional web developer</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
+        </section>
 
         <section id="skills">
             <h2>Skills</h2>
@@ -112,261 +118,338 @@
             </ul>
         </section>
 
+        <section id="projects">
+            <h2>My Projects</h2>
 
-       <section id="projects">
+            <p class="section-intro">
+                Here are some of the projects I've built while developing
+                my web development skills.
+            </p>
 
-    <h2>My Projects</h2>
+            <div class="project-container">
 
-    <p class="section-intro">
-        Here are some of the projects I've built while developing
-        my web development skills.
-    </p>
+                <article class="project-card">
+                    <div class="project-content">
+                        <p class="project-type">PORTFOLIO WEBSITE</p>
 
-    <div class="project-container">
+                        <h3>Personal Portfolio</h3>
+                        <p class="project-date">Date Created: 20-01-2026</p>
 
-        <!-- Project 1 -->
-        <article class="project-card">
+                        <p>
+                            A responsive personal portfolio website created
+                            to showcase my skills, projects, certifications
+                            and development journey.
+                        </p>
 
-            <div class="project-content">
+                        <ul class="project-features">
+                            <li>Responsive design</li>
+                            <li>Accessible HTML structure</li>
+                            <li>Mobile-friendly layout</li>
+                        </ul>
 
-                <p class="project-type">PORTFOLIO WEBSITE</p>
+                        <p class="technologies">HTML • CSS</p>
 
-                <h3>Personal Portfolio</h3>
-                    <p style="color:Blue; ">Date Created:20-01-2026</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a href="https://github.com/timivincent9-collab/vinci-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </article>
 
-                <p>
-                    A responsive personal portfolio website created
-                    to showcase my skills, projects, certifications
-                    and development journey.
-                </p>
+                <article class="project-card">
+                    <div class="project-content">
+                        <p class="project-type">EDUCATION</p>
 
-                <ul class="project-features">
-                    <li>Responsive design</li>
-                    <li>Accessible HTML structure</li>
-                    <li>Mobile-friendly layout</li>
-                </ul>
+                        <h3>CBT Practice Application</h3>
+                        <p class="project-date">Date Created: 20-04-2026</p>
 
-                <p class="technologies">
-                    HTML • CSS
-                </p>
+                        <p>
+                            A computer-based test application designed to help
+                            students preparing for the Joint Admissions and
+                            Matriculation Board (JAMB) examination practise
+                            in a simple and interactive environment.
+                        </p>
 
-                <div class="project-links">
-                    <a href="#" target="_blank">Live Demo</a>
-                    <a href="#" target="_blank">GitHub</a>
-                </div>
+                        <ul class="project-features">
+                            <li>Question-based practice</li>
+                            <li>Interactive interface</li>
+                            <li>Student-focused design</li>
+                        </ul>
 
-            </div>
+                        <p class="technologies">HTML • CSS • JavaScript</p>
 
-        </article>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </article>
 
+                <article class="project-card">
+                    <div class="project-content">
+                        <p class="project-type">EDUCATION</p>
 
-        <!-- Project 2 -->
-        <article class="project-card">
+                        <h3>Nigerian Civil Service Promotion Examination Space</h3>
+                        <h4>Unofficial CBT Practice Space</h4>
+                        <p class="project-date">Date Created: 20-09-2026</p>
 
-            <div class="project-content">
+                        <p>
+                            A CBT practice platform developed to help civil
+                            servants in Nigeria prepare for promotion exams
+                            with an offline-first practice experience.
+                        </p>
 
-                <p class="project-type">EDUCATION</p>
+                        <ul class="project-features">
+                            <li>Offline-first functionality</li>
+                            <li>Practice questions</li>
+                            <li>Responsive interface</li>
+                        </ul>
 
-                <h3>CBT Practice Application</h3>
+                        <p class="technologies">HTML • CSS • JavaScript</p>
 
-                <p style="color:Blue; ">Date Created:20-04-2026</p>
-
-                <p>
-                    A computer-based test  application
-                    designed to help students who are preparing for 
-                    The Joint Admissions Matriculation Borad (JAMB) examination
-                    practice and learn in a simple and interactive environment.
-                </p>
-
-                <ul class="project-features">
-                    <li>Question-based practice</li>
-                    <li>Interactive interface</li>
-                    <li>Student-focused design</li>
-                </ul>
-
-                <p class="technologies">
-                    HTML • CSS • JavaScript
-                </p>
-
-                <div class="project-links">
-                    <a href="#" target="_blank">Live Demo</a>
-                    <a href="#" target="_blank">GitHub</a>
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- Project 3 -->
-        <article class="project-card">
-
-            <div class="project-content">
-
-                <p class="project-type">EDUCATION</p>
-
-                
-                <h3>Nigerian Civi-Service Promotion Examination Space </h3>
-
-
-                <h4>Unnofficial CBT Practice Space</h4>
-
-                <p style="color:Blue; ">Date Created:20-09-2026</p>
-
-                <p>
-                    A CBT practice platform developed to
-                    help Civil-Servants in Nigeria with an offline-first practice
-                    experience in preparation of The Civil Service Promotion Exams.
-                </p>
-
-                <ul class="project-features">
-                    <li>Offline-first functionality</li>
-                    <li>Practice questions</li>
-                    <li>Responsive interface</li>
-                </ul>
-
-                <p class="technologies">
-                    HTML • CSS • JavaScript
-                </p>
-
-                <div class="project-links">
-                    <a href="#" target="_blank">Live Demo</a>
-                    <a href="#" target="_blank">GitHub</a>
-                </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </article>
 
             </div>
+        </section>
 
-        </article>
-
-    </div>
-
-    </section>
         <section id="certifications">
+            <h2>Certifications &amp; Learning</h2>
 
-    <h2>Certifications & Learning</h2>
-
-    <p class="section-intro">
-        While continuously developing my skills through structured
-        learning, certifications and practical projects, Here are a few personal projects i have worked on.
-    </p>
-
-    <div class="learning-container">
-
-        <article class="learning-card">
-
-            <p class="learning-status">COMPLETED</p>
-
-            <h3>Responsive Web Design</h3>
-
-            <p>
-                Learning how to build responsive and accessible
-                websites using HTML and CSS through freeCodeCamp.
+            <p class="section-intro">
+                I'm continuously developing my skills through structured
+                learning, certifications and practical projects.
             </p>
 
-            <p class="learning-platform">
-                freeCodeCamp
-            </p>
+            <div class="learning-container">
 
-        </article>
+                <article class="learning-card">
+                    <p class="learning-status">IN PROGRESS</p>
 
+                    <h3>Responsive Web Design</h3>
 
-        <article class="learning-card">
+                    <p>
+                        Learning how to build responsive and accessible
+                        websites using HTML and CSS through freeCodeCamp.
+                    </p>
 
-            <p class="learning-status">CURRENTLY LEARNING</p>
+                    <p class="learning-platform">freeCodeCamp</p>
+                </article>
 
-            <h3>JavaScript</h3>
+                <article class="learning-card">
+                    <p class="learning-status">CURRENTLY LEARNING</p>
 
-            <p>
-                Developing my JavaScript skills to create
-                interactive and dynamic web applications.
-            </p>
+                    <h3>JavaScript</h3>
 
-            <p class="learning-platform">
-                Current Learning Path
-            </p>
+                    <p>
+                        Developing my JavaScript skills to create
+                        interactive and dynamic web applications.
+                    </p>
 
-        </article>
+                    <p class="learning-platform">Current Learning Path</p>
+                </article>
 
+                <article class="learning-card">
+                    <p class="learning-status">LONG-TERM GOAL</p>
 
-            <article class="learning-card">
+                    <h3>Full-Stack Web Development</h3>
 
-                <p class="learning-status">LONG-TERM GOAL</p>
+                    <p>
+                        Building toward full-stack development by learning
+                        frontend, backend, databases and modern development
+                        tools.
+                    </p>
 
-                <h3>Full-Stack Web Development</h3>
+                    <p class="learning-platform">Future Learning Goal</p>
+                </article>
 
-                <p>
-                    Building toward full-stack development by learning
-                    frontend, backend, databases and modern development
-                    tools.
-                </p>
-
-                <p class="learning-platform">
-                    Future Learning Goal
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
+            </div>
+        </section>
 
         <section id="contact">
+            <h2>Let's Connect</h2>
 
-    <h2>Let's Connect</h2>
-
-    <p class="contact-intro">
-        I'm currently learning, building projects and looking for
-        opportunities to grow as a web developer.
-    </p>
-
-    <div class="contact-container">
-
-        <div class="contact-text">
-
-            <h3>Interested in working together?</h3>
-
-            <p>
-                Whether you're looking for a junior developer,
-                have a project idea, or simply want to connect,
-                feel free to reach out.
+            <p class="contact-intro">
+                I'm currently learning, building projects and looking for
+                opportunities to grow as a web developer.
             </p>
 
-        </div>
+            <div class="contact-container">
+                <div class="contact-text">
+                    <h3>Interested in working together?</h3>
 
+                    <p>
+                        Whether you're looking for a junior developer,
+                        have a project idea, or simply want to connect,
+                        feel free to reach out.
+                    </p>
+                </div>
 
-        <div class="contact-links">
+                <div class="contact-links">
+                    <a href="https://github.com/timivincent9-collab"
+                       target="_blank" rel="noopener noreferrer"
+                       class="contact-link">
+                        <strong>GitHub</strong>
+                        <span>View my code and projects</span>
+                    </a>
 
-            <a href="#" target="_blank" class="contact-link">
-                <strong>GitHub</strong>
-                <span>View my code and projects</span>
-            </a>
+                    <a href="#contact" class="contact-link">
+                        <strong>X (Twitter)</strong>
+                        <span>Connect with me professionally</span>
+                    </a>
 
-
-            <a href="#" target="_blank" class="contact-link">
-                <strong>X (Twitter)</strong>
-                <span>Connect with me professionally</span>
-            </a>
-
-
-            <a href="mailto:your-email@example.com"
-               class="contact-link">
-                <strong>Email</strong>
-                <span>Send me a message</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+                    <a href="mailto:your-email@example.com"
+                       class="contact-link">
+                        <strong>Email</strong>
+                        <span>Send me a message</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
     </main>
-
 
     <footer>
         <p>&copy; 2026 Olorunfemi Timilehin Vincent. All rights reserved.</p>
     </footer>
+
+    <!-- Dark Mode Welcome Popup -->
+    <div
+        class="dark-mode-overlay"
+        id="darkModePopup"
+        aria-hidden="true"
+    >
+        <div
+            class="dark-mode-popup"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="darkModeTitle"
+            aria-describedby="darkModeDescription"
+        >
+            <button
+                class="popup-close"
+                id="closeDarkPopup"
+                type="button"
+                aria-label="Close popup"
+            >&times;</button>
+
+            <div class="popup-moon" aria-hidden="true">☾</div>
+
+            <h2 id="darkModeTitle">Move to the dark side</h2>
+
+            <p id="darkModeDescription">
+                A darker look. The same Vinci experience.
+            </p>
+
+            <button
+                class="dark-mode-button"
+                id="enableDarkMode"
+                type="button"
+            >
+                Turn on dark mode
+            </button>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            const popup = document.getElementById("darkModePopup");
+            const enableButton = document.getElementById("enableDarkMode");
+            const closeButton = document.getElementById("closeDarkPopup");
+            const themeToggle = document.getElementById("themeToggle");
+            const themeIcon = document.getElementById("themeIcon");
+            const themeLabel = document.getElementById("themeLabel");
+
+            const themeKey = "vinci-dark-mode";
+            const dismissedKey = "vinci-popup-dismissed";
+
+            function setTheme(isDark) {
+                document.body.classList.toggle("dark-mode", isDark);
+
+                try {
+                    localStorage.setItem(
+                        themeKey,
+                        isDark ? "enabled" : "disabled"
+                    );
+                } catch (error) {
+                    console.warn("Theme preference could not be saved.");
+                }
+
+                themeToggle.setAttribute("aria-pressed", String(isDark));
+                themeIcon.textContent = isDark ? "☀" : "☾";
+                themeLabel.textContent = isDark ? "Light mode" : "Dark mode";
+            }
+
+            function dismissPopup(rememberForSession = true) {
+                popup.classList.remove("show");
+                popup.setAttribute("aria-hidden", "true");
+
+                if (rememberForSession) {
+                    try {
+                        sessionStorage.setItem(dismissedKey, "yes");
+                    } catch (error) {
+                        // Dismissal still works for the current page.
+                    }
+                }
+            }
+
+            let savedTheme = null;
+            let popupDismissed = false;
+
+            try {
+                savedTheme = localStorage.getItem(themeKey);
+                popupDismissed =
+                    sessionStorage.getItem(dismissedKey) === "yes";
+            } catch (error) {
+                console.warn("Browser storage is unavailable.");
+            }
+
+            setTheme(savedTheme === "enabled");
+
+            if (savedTheme === null && !popupDismissed) {
+                popup.classList.add("show");
+                popup.setAttribute("aria-hidden", "false");
+            }
+
+            enableButton.addEventListener("click", () => {
+                setTheme(true);
+                dismissPopup();
+                themeToggle.focus();
+            });
+
+            closeButton.addEventListener("click", () => {
+                dismissPopup();
+                themeToggle.focus();
+            });
+
+            themeToggle.addEventListener("click", () => {
+                const isDark =
+                    !document.body.classList.contains("dark-mode");
+
+                setTheme(isDark);
+            });
+
+            popup.addEventListener("click", (event) => {
+                if (event.target === popup) {
+                    dismissPopup();
+                }
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (
+                    event.key === "Escape" &&
+                    popup.classList.contains("show")
+                ) {
+                    dismissPopup();
+                    closeButton.focus();
+                }
+            });
+        })();
+    </script>
 
 </body>
 </html>
