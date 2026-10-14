@@ -342,7 +342,7 @@
             <h2 id="darkModeTitle">Move to the dark side</h2>
 
             <p id="darkModeDescription">
-                A darker look. The same Vinci experience.
+                You can always switch back later
             </p>
 
             <button
@@ -355,101 +355,100 @@
         </div>
     </div>
 
-    <script>
-        (() => {
-            const popup = document.getElementById("darkModePopup");
-            const enableButton = document.getElementById("enableDarkMode");
-            const closeButton = document.getElementById("closeDarkPopup");
-            const themeToggle = document.getElementById("themeToggle");
-            const themeIcon = document.getElementById("themeIcon");
-            const themeLabel = document.getElementById("themeLabel");
+   
+<script>
+    (() => {
+        const popup = document.getElementById("darkModePopup");
+        const enableButton = document.getElementById("enableDarkMode");
+        const closeButton = document.getElementById("closeDarkPopup");
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const themeLabel = document.getElementById("themeLabel");
 
-            const themeKey = "vinci-dark-mode";
-            const dismissedKey = "vinci-popup-dismissed";
+        const themeKey = "vinci-dark-mode";
 
-            function setTheme(isDark) {
-                document.body.classList.toggle("dark-mode", isDark);
-
-                try {
-                    localStorage.setItem(
-                        themeKey,
-                        isDark ? "enabled" : "disabled"
-                    );
-                } catch (error) {
-                    console.warn("Theme preference could not be saved.");
-                }
-
-                themeToggle.setAttribute("aria-pressed", String(isDark));
-                themeIcon.textContent = isDark ? "☀" : "☾";
-                themeLabel.textContent = isDark ? "Light mode" : "Dark mode";
-            }
-
-            function dismissPopup(rememberForSession = true) {
-                popup.classList.remove("show");
-                popup.setAttribute("aria-hidden", "true");
-
-                if (rememberForSession) {
-                    try {
-                        sessionStorage.setItem(dismissedKey, "yes");
-                    } catch (error) {
-                        // Dismissal still works for the current page.
-                    }
-                }
-            }
-
-            let savedTheme = null;
-            let popupDismissed = false;
+        function setTheme(isDark) {
+            document.body.classList.toggle("dark-mode", isDark);
 
             try {
-                savedTheme = localStorage.getItem(themeKey);
-                popupDismissed =
-                    sessionStorage.getItem(dismissedKey) === "yes";
+                localStorage.setItem(
+                    themeKey,
+                    isDark ? "enabled" : "disabled"
+                );
             } catch (error) {
-                console.warn("Browser storage is unavailable.");
+                console.warn("Could not save theme preference.");
             }
 
-            setTheme(savedTheme === "enabled");
+            themeToggle.setAttribute("aria-pressed", String(isDark));
+            themeIcon.textContent = isDark ? "☀" : "☾";
+            themeLabel.textContent = isDark ? "Light mode" : "Dark mode";
+        }
 
-            if (savedTheme === null && !popupDismissed) {
-                popup.classList.add("show");
-                popup.setAttribute("aria-hidden", "false");
+        function showPopup() {
+            popup.classList.add("show");
+            popup.setAttribute("aria-hidden", "false");
+        }
+
+        function hidePopup() {
+            popup.classList.remove("show");
+            popup.setAttribute("aria-hidden", "true");
+        }
+
+        // Restore the saved theme preference.
+        let savedTheme = null;
+
+        try {
+            savedTheme = localStorage.getItem(themeKey);
+        } catch (error) {
+            console.warn("Could not read saved theme preference.");
+        }
+
+        setTheme(savedTheme === "enabled");
+
+        // Always show the popup whenever the page loads or refreshes.
+        showPopup();
+
+        // Enable dark mode and close the popup.
+        enableButton.addEventListener("click", () => {
+            setTheme(true);
+            hidePopup();
+            themeToggle.focus();
+        });
+
+        // Close the popup without changing the current theme.
+        closeButton.addEventListener("click", () => {
+            hidePopup();
+            themeToggle.focus();
+        });
+
+        // Allow the visitor to switch between dark and light mode.
+        themeToggle.addEventListener("click", () => {
+            const isDark =
+                !document.body.classList.contains("dark-mode");
+
+            setTheme(isDark);
+        });
+
+        // Close the popup when clicking the dimmed background.
+        popup.addEventListener("click", (event) => {
+            if (event.target === popup) {
+                hidePopup();
             }
+        });
 
-            enableButton.addEventListener("click", () => {
-                setTheme(true);
-                dismissPopup();
-                themeToggle.focus();
-            });
+        // Allow Escape to close the popup.
+        document.addEventListener("keydown", (event) => {
+            if (
+                event.key === "Escape" &&
+                popup.classList.contains("show")
+            ) {
+                hidePopup();
+                closeButton.focus();
+            }
+        });
+    })();
+</script>
 
-            closeButton.addEventListener("click", () => {
-                dismissPopup();
-                themeToggle.focus();
-            });
-
-            themeToggle.addEventListener("click", () => {
-                const isDark =
-                    !document.body.classList.contains("dark-mode");
-
-                setTheme(isDark);
-            });
-
-            popup.addEventListener("click", (event) => {
-                if (event.target === popup) {
-                    dismissPopup();
-                }
-            });
-
-            document.addEventListener("keydown", (event) => {
-                if (
-                    event.key === "Escape" &&
-                    popup.classList.contains("show")
-                ) {
-                    dismissPopup();
-                    closeButton.focus();
-                }
-            });
-        })();
-    </script>
 
 </body>
 </html>
