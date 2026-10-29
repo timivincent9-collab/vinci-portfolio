@@ -1,1927 +1,3994 @@
 
+
 /* ========================================
+
    VINCI PORTFOLIO — GENERAL STYLES
+
 ======================================== */
+
+
 
 :root {
+
     color-scheme: light;
+
     --page-bg: #f5f7fa;
+
     --surface: #ffffff;
+
     --surface-alt: #eef2ff;
+
     --card-bg: #f5f7fa;
+
     --text: #222222;
+
     --heading: #111827;
+
     --muted: #555555;
+
     --border: #e5e7eb;
+
     --accent: #2563eb;
+
     --accent-hover: #1d4ed8;
+
     --header-bg: #111827;
+
     --header-text: #ffffff;
+
     --footer-bg: #111827;
+
     --footer-text: #d1d5db;
+
     --card-shadow: rgba(0, 0, 0, 0.08);
+
 }
+
+
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+
 
 html {
+
     scroll-behavior: smooth;
+
     scroll-padding-top: 20px;
+
 }
+
+
 
 body {
+
     font-family: "Segoe UI", Arial, sans-serif;
+
     line-height: 1.6;
+
     color: var(--text);
+
     background-color: var(--page-bg);
+
     transition: background-color 0.3s ease, color 0.3s ease;
+
 }
+
+
 
 a,
-button {
-    -webkit-tap-highlight-color: transparent;
-}
 
 button {
-    font: inherit;
+
+    -webkit-tap-highlight-color: transparent;
+
 }
+
+
+
+button {
+
+    font: inherit;
+
+}
+
+
 
 /* ========================================
+
    NAVIGATION
+
 ======================================== */
+
+
 
 header {
+
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
+
     background-color: var(--header-bg);
+
     color: var(--header-text);
+
     padding: 20px 8%;
+
     border-bottom: 1px solid rgba(147, 197, 253, 0.16);
+
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+
 }
+
+
 
 nav {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 24px;
+
     max-width: 1440px;
+
     margin: 0 auto;
+
 }
+
+
 
 nav h1 {
+
     font-size: clamp(1.15rem, 2vw, 1.5rem);
+
     line-height: 1.3;
+
     letter-spacing: -0.045em;
+
     white-space: nowrap;
+
 }
+
+
 
 nav ul {
+
     display: flex;
+
     flex-wrap: wrap;
+
     list-style: none;
+
     gap: clamp(12px, 2vw, 26px);
+
     align-items: center;
+
 }
+
+
 
 nav a {
+
     position: relative;
+
     color: var(--header-text);
+
     text-decoration: none;
+
     font-weight: bold;
+
     transition: color 0.25s ease;
+
 }
+
+
 
 nav a::after {
+
     content: "";
+
     position: absolute;
+
     left: 0;
+
     right: 100%;
+
     bottom: -7px;
+
     height: 2px;
+
     background: #93c5fd;
+
     transition: right 0.25s ease;
+
 }
+
+
 
 nav a:hover {
+
     color: #93c5fd;
+
 }
+
+
 
 nav a:hover::after,
+
 nav a:focus-visible::after {
+
     right: 0;
+
 }
+
+
 
 .theme-toggle {
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     flex-shrink: 0;
+
     gap: 8px;
+
     padding: 9px 13px;
+
     border: 1px solid #4b5563;
+
     border-radius: 8px;
+
     background: #1f2937;
+
     color: #ffffff;
+
     cursor: pointer;
+
     transition: background-color 0.2s ease, border-color 0.2s ease;
+
 }
+
+
 
 .theme-toggle:hover {
+
     background: #374151;
+
 }
+
+
 
 .theme-toggle:focus-visible,
+
 .dark-mode-button:focus-visible,
+
 .popup-close:focus-visible {
+
     outline: 3px solid #93c5fd;
+
     outline-offset: 3px;
+
 }
 
+
+
 /* ========================================
+
    HERO SECTION
+
 ======================================== */
+
+
 
 #hero {
+
     min-height: 76vh;
+
     min-height: 76svh;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
+
     padding: clamp(80px, 12vh, 140px) 24px;
+
     background-color: var(--surface);
+
     color: var(--text);
+
 }
+
+
 
 .hero-intro {
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 10px;
+
     font-size: 1.1rem;
+
     font-weight: bold;
+
     color: var(--accent);
+
     margin-bottom: 10px;
+
     padding: 7px 14px;
+
     border: 1px solid var(--border);
+
     border-radius: 999px;
+
     background: var(--surface-alt);
+
     letter-spacing: 0.035em;
+
 }
+
+
 
 .hero-intro::before {
+
     content: "";
+
     width: 7px;
+
     height: 7px;
+
     flex: 0 0 7px;
+
     border-radius: 50%;
+
     background: #22c55e;
+
     box-shadow: 0 0 12px rgba(34, 197, 94, 0.45);
+
 }
+
+
 
 #hero h2 {
+
     max-width: 950px;
+
     margin: 12px auto 24px;
+
     font-size: clamp(2.7rem, 7vw, 5.2rem);
+
     line-height: 1.05;
+
     letter-spacing: -0.06em;
+
     color: var(--heading);
+
     text-wrap: balance;
+
 }
+
+
 
 #hero p {
+
     max-width: 680px;
+
     margin: 0 auto 25px;
+
     font-size: 1.1rem;
+
     text-wrap: pretty;
+
 }
+
+
 
 .hero-buttons {
+
     display: flex;
+
     gap: 15px;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
 }
+
+
 
 .hero-buttons a {
+
     display: inline-block;
+
     background-color: var(--accent);
+
     color: #ffffff;
+
     padding: 12px 24px;
+
     border-radius: 6px;
+
     text-decoration: none;
+
     transition:
+
         transform 0.25s ease,
+
         box-shadow 0.25s ease,
+
         background-color 0.25s ease;
+
 }
+
+
 
 .hero-buttons a:hover {
+
     background-color: var(--accent-hover);
+
     transform: translateY(-3px);
+
     box-shadow: 0 10px 26px rgba(37, 99, 235, 0.2);
+
 }
+
+
 
 .secondary-button {
+
     background-color: transparent !important;
+
     color: var(--heading) !important;
+
     border: 2px solid var(--heading);
+
 }
+
+
 
 .secondary-button:hover {
+
     background-color: var(--heading) !important;
+
     color: #ffffff !important;
+
 }
 
+
+
 /* ========================================
+
    GENERAL SECTIONS
+
 ======================================== */
+
+
 
 section {
+
     position: relative;
+
     isolation: isolate;
+
     padding: 70px 8%;
+
 }
+
+
 
 section h2 {
+
     margin-bottom: 25px;
+
     font-size: 2rem;
+
     color: var(--heading);
+
 }
+
+
 
 section h2::after {
+
     content: "";
+
     display: block;
+
     width: 50px;
+
     height: 4px;
+
     background-color: var(--accent);
+
     margin-top: 10px;
+
     border-radius: 2px;
+
 }
 
+
+
 /* ========================================
+
    ABOUT
+
 ======================================== */
+
+
 
 #about {
+
     background-color: var(--surface-alt);
+
 }
+
+
 
 .about-content {
+
     display: grid;
+
     grid-template-columns: 1.5fr 1fr;
+
     gap: 40px;
+
     align-items: start;
+
 }
+
+
 
 .about-text p {
+
     margin-bottom: 20px;
+
     max-width: 700px;
+
 }
+
+
 
 .accent-text {
+
     color: var(--accent);
+
     font-weight: 600;
+
 }
+
+
 
 .about-highlights {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
+
 }
+
+
 
 .highlight {
+
     background-color: var(--surface);
+
     padding: 20px;
+
     border-radius: 8px;
+
     border: 1px solid var(--border);
+
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
 }
+
+
 
 .highlight h3 {
+
     margin-bottom: 8px;
+
     color: var(--accent);
+
 }
+
+
 
 .highlight p {
+
     margin: 0;
+
 }
 
+
+
 /* ========================================
+
    SKILLS
+
 ======================================== */
+
+
 
 #skills ul {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 12px;
+
     list-style: none;
+
 }
+
+
 
 #skills li {
+
     background-color: var(--surface);
+
     padding: 10px 18px;
+
     border-radius: 20px;
+
     border: 1px solid var(--border);
+
     font-weight: 600;
+
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
+
+
 
 #skills li:hover {
+
     transform: translateY(-2px);
+
     box-shadow: 0 5px 12px var(--card-shadow);
+
 }
 
+
+
 /* ========================================
+
    PROJECTS
+
 ======================================== */
+
+
 
 #projects {
+
     background-color: var(--surface);
+
 }
+
+
 
 .section-intro {
+
     max-width: 700px;
+
     margin-bottom: 40px;
+
     color: var(--muted);
+
 }
+
+
 
 .project-container {
+
     display: grid;
+
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 25px;
+
 }
+
+
 
 .project-card {
+
     min-width: 0;
+
     background-color: var(--card-bg);
+
     padding: 30px;
+
     border-radius: 12px;
+
     border: 1px solid var(--border);
+
     transition:
+
         transform 0.3s ease,
+
         box-shadow 0.3s ease,
+
         border-color 0.3s ease;
+
 }
+
+
 
 .project-card:hover {
+
     transform: translateY(-5px);
+
     box-shadow: 0 16px 36px rgba(17, 24, 39, 0.09);
+
     border-color: rgba(37, 99, 235, 0.4);
+
 }
+
+
 
 .project-type {
+
     font-size: 0.8rem;
+
     font-weight: bold;
+
     color: var(--accent);
+
     letter-spacing: 1px;
+
     margin-bottom: 10px;
+
 }
+
+
 
 .project-card h3 {
+
     margin-bottom: 15px;
+
     font-size: 1.4rem;
+
     color: var(--heading);
+
     overflow-wrap: anywhere;
+
 }
+
+
 
 .project-card h4 {
+
     margin: 0 0 12px;
+
     color: var(--muted);
+
 }
+
+
 
 .project-card p {
+
     margin-bottom: 15px;
+
 }
+
+
 
 .project-date {
+
     color: var(--accent);
+
     font-size: 0.9rem;
+
 }
+
+
 
 .project-features {
+
     margin: 20px 0;
+
     padding-left: 20px;
+
 }
+
+
 
 .project-features li {
+
     margin-bottom: 8px;
+
 }
+
+
 
 .technologies {
+
     font-weight: bold;
+
     color: var(--accent);
+
 }
+
+
 
 .project-links {
+
     display: flex;
+
     gap: 15px;
+
     flex-wrap: wrap;
+
     margin-top: 20px;
+
 }
+
+
 
 .project-links a {
+
     display: inline-block;
+
     background-color: var(--header-bg);
+
     color: #ffffff;
+
     padding: 8px 15px;
+
     border-radius: 5px;
+
     text-decoration: none;
+
     font-size: 0.9rem;
+
     transition: transform 0.2s ease, background-color 0.2s ease;
+
 }
+
+
 
 .project-links a:hover {
+
     background-color: var(--accent);
+
     transform: translateY(-2px);
+
 }
 
+
+
 /* ========================================
+
    CERTIFICATIONS & LEARNING
+
 ======================================== */
+
+
 
 #certifications {
+
     background-color: var(--surface-alt);
+
 }
+
+
 
 .learning-container {
+
     display: grid;
+
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 25px;
+
 }
+
+
 
 .learning-card {
+
     min-width: 0;
+
     background-color: var(--surface);
+
     padding: 30px;
+
     border-radius: 12px;
+
     border: 1px solid var(--border);
+
     transition:
+
         transform 0.3s ease,
+
         box-shadow 0.3s ease,
+
         border-color 0.3s ease;
+
 }
+
+
 
 .learning-card:hover {
+
     transform: translateY(-5px);
+
     box-shadow: 0 16px 36px rgba(17, 24, 39, 0.09);
+
     border-color: rgba(37, 99, 235, 0.4);
+
 }
+
+
 
 .learning-status {
+
     font-size: 0.8rem;
+
     font-weight: bold;
+
     color: var(--accent);
+
     letter-spacing: 1px;
+
     margin-bottom: 10px;
+
 }
+
+
 
 .learning-card h3 {
+
     font-size: 1.3rem;
+
     margin-bottom: 15px;
+
     color: var(--heading);
+
 }
+
+
 
 .learning-card p {
+
     margin-bottom: 15px;
+
 }
+
+
 
 .learning-platform {
+
     font-weight: bold;
+
     color: var(--muted);
+
 }
 
+
+
 /* ========================================
+
    CONTACT
+
 ======================================== */
+
+
 
 #contact {
+
     background-color: var(--surface);
+
 }
+
+
 
 .contact-intro {
+
     max-width: 650px;
+
     margin-bottom: 40px;
+
     color: var(--muted);
+
 }
+
+
 
 .contact-container {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 40px;
+
     align-items: start;
+
 }
+
+
 
 .contact-text h3 {
+
     font-size: 1.5rem;
+
     margin-bottom: 15px;
+
     color: var(--heading);
+
 }
+
+
 
 .contact-text p {
+
     max-width: 500px;
+
 }
+
+
 
 .contact-links {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
+
 }
+
+
 
 .contact-link {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 5px;
+
     background-color: var(--card-bg);
+
     padding: 20px;
+
     border-radius: 8px;
+
     border: 1px solid var(--border);
+
     text-decoration: none;
+
     color: var(--text);
+
     transition:
+
         transform 0.3s ease,
+
         box-shadow 0.3s ease,
+
         border-color 0.3s ease;
+
 }
+
+
 
 .contact-link:hover {
+
     transform: translateY(-3px);
+
     box-shadow: 0 16px 36px rgba(17, 24, 39, 0.09);
+
     border-color: rgba(37, 99, 235, 0.4);
+
 }
+
+
 
 .contact-link strong {
+
     font-size: 1.1rem;
+
     color: var(--accent);
+
 }
+
+
 
 .contact-link span {
+
     color: var(--muted);
+
     font-size: 0.9rem;
+
 }
 
+
+
 /* ========================================
+
    FOOTER
+
 ======================================== */
+
+
 
 footer {
+
     background-color: var(--footer-bg);
+
     color: var(--footer-text);
+
     text-align: center;
+
     padding: 30px 20px;
+
 }
+
+
 
 footer p {
+
     font-size: 0.9rem;
+
 }
 
+
+
 /* ========================================
+
    DARK MODE
+
 ======================================== */
+
+
 
 body.dark-mode {
+
     color-scheme: dark;
 
+
+
     --page-bg: #111315;
+
     --surface: #171a1f;
+
     --surface-alt: #151922;
+
     --card-bg: #1c2026;
+
     --text: #e5e7eb;
+
     --heading: #f3f4f6;
+
     --muted: #c1c7d0;
+
     --border: #353b45;
+
     --accent: #a8c5ff;
+
     --accent-hover: #c0d5ff;
+
     --header-bg: #0d0f12;
+
     --header-text: #f3f4f6;
+
     --footer-bg: #0d0f12;
+
     --footer-text: #cbd5e1;
+
     --card-shadow: rgba(0, 0, 0, 0.25);
+
 }
+
+
 
 body.dark-mode header {
+
     border-bottom-color: rgba(168, 197, 255, 0.13);
+
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+
 }
+
+
 
 body.dark-mode .theme-toggle {
+
     background: #292e36;
+
     color: #ffffff;
+
     border-color: #454b54;
+
 }
+
+
 
 body.dark-mode .theme-toggle:hover {
+
     background: #383e45;
+
 }
+
+
 
 body.dark-mode .secondary-button {
+
     color: var(--heading) !important;
+
     border-color: var(--heading);
+
 }
+
+
 
 body.dark-mode .secondary-button:hover {
+
     background-color: var(--heading) !important;
+
     color: #111315 !important;
+
 }
+
+
 
 body.dark-mode .project-links a {
+
     background-color: #292e36;
+
     color: #ffffff;
+
 }
+
+
 
 body.dark-mode .project-links a:hover {
+
     background-color: #2563eb;
+
     color: #ffffff;
+
 }
+
+
 
 body.dark-mode .project-card:hover,
+
 body.dark-mode .learning-card:hover,
+
 body.dark-mode .highlight:hover,
+
 body.dark-mode .contact-link:hover {
+
     border-color: rgba(168, 197, 255, 0.3);
+
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+
 }
 
+
+
 /* ========================================
+
    DARK MODE WELCOME POPUP
+
 ======================================== */
+
+
 
 .dark-mode-overlay {
+
     position: fixed;
+
     inset: 0;
+
     z-index: 9999;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     padding: 20px;
+
     background: rgba(0, 0, 0, 0.68);
+
     opacity: 0;
+
     visibility: hidden;
+
     pointer-events: none;
+
     transition: opacity 0.3s ease, visibility 0.3s ease;
+
 }
+
+
 
 .dark-mode-overlay.show {
+
     opacity: 1;
+
     visibility: visible;
+
     pointer-events: auto;
+
 }
+
+
 
 .dark-mode-popup {
+
     position: relative;
+
     width: 100%;
+
     max-width: 420px;
+
     padding: 42px 30px 32px;
+
     border-radius: 18px;
+
     background: #f8f7f3;
+
     color: #202124;
+
     text-align: center;
+
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+
     transform: translateY(20px) scale(0.97);
+
     transition: transform 0.3s ease;
+
 }
+
+
 
 .dark-mode-overlay.show .dark-mode-popup {
+
     transform: translateY(0) scale(1);
+
 }
+
+
 
 .popup-moon {
+
     margin-bottom: 15px;
+
     color: #252525;
+
     font-size: 42px;
+
     line-height: 1.2;
+
 }
+
+
 
 .dark-mode-popup h2 {
+
     margin: 0 0 12px;
+
     color: #202124;
+
     font-size: clamp(24px, 5vw, 32px);
+
     line-height: 1.2;
+
     letter-spacing: -1px;
+
 }
+
+
 
 .dark-mode-popup h2::after {
+
     display: none;
+
 }
+
+
 
 .dark-mode-popup p {
+
     margin-bottom: 25px;
+
     color: #686868;
+
     font-size: 15px;
+
     line-height: 1.6;
+
 }
+
+
 
 .dark-mode-button {
+
     width: 100%;
+
     padding: 15px 20px;
+
     border: 1px solid #171717;
+
     border-radius: 8px;
+
     background: #171717;
+
     color: #ffffff;
+
     font-size: 15px;
+
     font-weight: 600;
+
     cursor: pointer;
+
     transition: background 0.2s ease, transform 0.2s ease;
+
 }
+
+
 
 .dark-mode-button:hover {
+
     background: #343434;
+
     transform: translateY(-2px);
+
 }
+
+
 
 .popup-close {
+
     position: absolute;
+
     top: 10px;
+
     right: 14px;
+
     padding: 4px 8px;
+
     border: none;
+
     background: transparent;
+
     color: #666666;
+
     font-size: 28px;
+
     line-height: 1.2;
+
     cursor: pointer;
+
 }
+
+
 
 .popup-close:hover {
+
     color: #111111;
+
 }
 
+
+
 /* ========================================
+
    MOBILE RESPONSIVENESS
+
 ======================================== */
+
+
 
 @media (max-width: 1000px) {
+
     header {
+
         padding: 20px 5%;
+
     }
+
+
 
     nav {
+
         flex-wrap: wrap;
+
     }
+
+
 
     nav ul {
+
         gap: 16px;
+
     }
 
+
+
     .project-container,
+
     .learning-container {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
     }
+
 }
+
+
 
 @media (max-width: 768px) {
+
     nav {
+
         flex-direction: column;
+
         gap: 16px;
+
     }
 
+
+
     nav ul {
+
         flex-wrap: wrap;
+
         justify-content: center;
+
         gap: 15px;
+
         row-gap: 14px;
+
     }
+
+
 
     nav h1 {
+
         text-align: center;
+
         white-space: normal;
+
     }
+
+
 
     #hero {
+
         min-height: auto;
+
         padding: 90px 6% 80px;
+
     }
 
+
+
     #hero h2 {
+
         font-size: clamp(2.5rem, 10vw, 4rem);
+
         letter-spacing: -0.045em;
+
     }
+
+
 
     section {
+
         padding: 50px 6%;
+
     }
+
+
 
     .project-container,
+
     .learning-container,
+
     .about-content,
+
     .contact-container {
+
         grid-template-columns: 1fr;
+
     }
+
+
 
     .project-card,
+
     .learning-card {
+
         padding: 25px;
+
     }
+
+
 
     .project-card:active,
+
     .learning-card:active,
+
     .contact-link:active {
+
         transform: scale(0.98);
+
     }
+
+
 
     #skills li:active {
+
         transform: scale(0.96);
+
         box-shadow: 0 4px 10px var(--card-shadow);
+
     }
+
+
 
     .hero-buttons a:active,
+
     .project-links a:active {
+
         transform: scale(0.96);
+
     }
+
 }
+
+
 
 @media (max-width: 480px) {
+
     header {
+
         padding: 20px 5%;
+
     }
+
+
 
     nav ul {
+
         gap: 12px;
+
     }
+
+
 
     nav a {
+
         font-size: 0.9rem;
+
     }
+
+
 
     #hero {
+
         padding: 72px 20px 64px;
+
     }
+
+
 
     #hero h2 {
+
         font-size: clamp(2.25rem, 11vw, 3.2rem);
+
     }
+
+
 
     #hero p {
+
         font-size: 1rem;
+
     }
+
+
 
     #hero .hero-intro {
+
         font-size: 0.8rem;
+
     }
+
+
 
     section h2 {
+
         font-size: 1.7rem;
+
     }
+
+
 
     .dark-mode-popup {
+
         padding: 38px 22px 25px;
+
     }
+
+
 
     .hero-buttons {
+
         gap: 10px;
+
     }
+
+
 
     .hero-buttons a {
+
         padding: 11px 17px;
+
     }
+
 }
 
+
+
 /* ========================================
+
    ACCESSIBILITY: REDUCED MOTION
+
 ======================================== */
+
+
 
 @media (prefers-reduced-motion: reduce) {
+
     html {
+
         scroll-behavior: auto;
+
     }
+
+
 
     *,
+
     *::before,
+
     *::after {
+
         transition-duration: 0.01ms !important;
+
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
     }
+
 }
 
+
+
 /* ========================================
+
    FUTURISTIC VISUAL FOUNDATION
+
 ======================================== */
 
+
+
 /* Subtle technology-inspired grid */
+
 section::before {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     z-index: -1;
+
     pointer-events: none;
 
+
+
     background-image:
+
         linear-gradient(
+
             to right,
+
             rgba(37, 99, 235, 0.045) 1px,
+
             transparent 1px
+
         ),
+
         linear-gradient(
+
             to bottom,
+
             rgba(37, 99, 235, 0.045) 1px,
+
             transparent 1px
+
         );
+
+
 
     background-size: 42px 42px;
 
+
+
     -webkit-mask-image: linear-gradient(
+
         to bottom,
+
         black,
+
         transparent 95%
+
     );
+
+
 
     mask-image: linear-gradient(
+
         to bottom,
+
         black,
+
         transparent 95%
+
     );
+
 }
+
+
 
 /* Soft ambient lighting */
+
 section::after {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     z-index: -1;
+
     pointer-events: none;
 
+
+
     background: radial-gradient(
+
         circle at 85% 12%,
+
         rgba(37, 99, 235, 0.055),
+
         transparent 38%
+
     );
+
 }
+
+
 
 /* Dark-mode grid and lighting */
+
 body.dark-mode section::before {
+
     background-image:
+
         linear-gradient(
+
             to right,
+
             rgba(168, 197, 255, 0.045) 1px,
+
             transparent 1px
+
         ),
+
         linear-gradient(
+
             to bottom,
+
             rgba(168, 197, 255, 0.045) 1px,
+
             transparent 1px
+
         );
+
 }
+
+
 
 body.dark-mode section::after {
+
     background: radial-gradient(
+
         circle at 85% 12%,
+
         rgba(91, 141, 239, 0.09),
+
         transparent 38%
+
     );
+
 }
 
+
+
 /* ========================================
+
    VINCI — PREMIUM FUTURISTIC ENHANCEMENTS
+
    Additive update: preserves existing styles
+
 ======================================== */
+
+
 
 /* 1. Refined page rendering */
+
 html {
+
     scroll-padding-top: 100px;
+
 }
 
+
+
 body {
+
     overflow-x: hidden;
+
     -webkit-font-smoothing: antialiased;
+
     text-rendering: optimizeLegibility;
+
 }
+
+
 
 /* 2. Premium header depth */
+
 header {
+
     backdrop-filter: blur(16px);
+
     -webkit-backdrop-filter: blur(16px);
+
     background-image: linear-gradient(
+
         135deg,
+
         rgba(147, 197, 253, 0.035),
+
         transparent 55%
+
     );
+
 }
+
+
 
 nav h1 {
+
     transition: color 0.25s ease;
+
 }
+
+
 
 nav h1:hover {
+
     color: #93c5fd;
+
 }
+
+
 
 /* 3. Stronger futuristic hero */
+
 #hero {
+
     overflow: hidden;
+
     background-image:
+
         radial-gradient(
+
             ellipse at 50% 0%,
+
             rgba(37, 99, 235, 0.10),
+
             transparent 58%
+
         );
+
 }
 
+
+
 #hero h2 {
+
     position: relative;
+
     text-shadow: 0 0 40px rgba(37, 99, 235, 0.07);
+
 }
+
+
 
 .hero-intro {
+
     backdrop-filter: blur(8px);
+
     -webkit-backdrop-filter: blur(8px);
+
     box-shadow: 0 4px 24px rgba(37, 99, 235, 0.045);
+
 }
+
+
 
 /* 4. Premium buttons */
+
 .hero-buttons a,
+
 .project-links a,
+
 .theme-toggle,
+
 .dark-mode-button {
+
     position: relative;
+
     overflow: hidden;
+
     transition:
+
         transform 0.25s ease,
+
         box-shadow 0.25s ease,
+
         background-color 0.25s ease,
+
         border-color 0.25s ease;
+
 }
+
+
 
 .hero-buttons a:hover,
+
 .project-links a:hover {
+
     box-shadow: 0 8px 24px rgba(37, 99, 235, 0.16);
+
 }
+
+
 
 .theme-toggle:hover {
+
     border-color: #93c5fd;
+
     box-shadow: 0 0 18px rgba(147, 197, 253, 0.09);
+
 }
+
+
 
 /* 5. Refined cards with layered depth */
+
 .project-card,
+
 .learning-card,
+
 .highlight,
+
 .contact-link {
+
     position: relative;
+
     overflow: hidden;
+
     box-shadow: 0 4px 18px var(--card-shadow);
+
     transition:
+
         transform 0.3s ease,
+
         box-shadow 0.3s ease,
+
         border-color 0.3s ease,
+
         background-color 0.3s ease;
+
 }
+
+
 
 .project-card::before,
+
 .learning-card::before,
+
 .highlight::before,
+
 .contact-link::before {
+
     content: "";
+
     position: absolute;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 2px;
+
     background: linear-gradient(
+
         90deg,
+
         transparent,
+
         var(--accent),
+
         transparent
+
     );
+
     opacity: 0;
+
     transition: opacity 0.3s ease;
+
     pointer-events: none;
+
 }
+
+
 
 .project-card:hover,
+
 .learning-card:hover,
+
 .highlight:hover,
+
 .contact-link:hover {
+
     transform: translateY(-5px);
+
     box-shadow: 0 18px 42px rgba(17, 24, 39, 0.10);
+
     border-color: rgba(37, 99, 235, 0.35);
+
 }
+
+
 
 .project-card:hover::before,
+
 .learning-card:hover::before,
+
 .highlight:hover::before,
+
 .contact-link:hover::before {
+
     opacity: 0.8;
+
 }
+
+
 
 /* 6. Skills: cleaner interactive feedback */
+
 #skills li {
+
     transition:
+
         transform 0.22s ease,
+
         border-color 0.22s ease,
+
         box-shadow 0.22s ease;
+
 }
+
+
 
 #skills li:hover {
+
     transform: translateY(-3px);
+
     border-color: var(--accent);
+
     box-shadow: 0 8px 22px var(--card-shadow);
+
 }
+
+
 
 /* 7. Clear keyboard navigation */
+
 a:focus-visible,
+
 button:focus-visible,
+
 #skills li:focus-visible {
+
     outline: 2px solid var(--accent);
+
     outline-offset: 4px;
+
 }
+
+
 
 /* 8. Enhanced dark-mode atmosphere */
+
 body.dark-mode #hero {
+
     background-image:
+
         radial-gradient(
+
             ellipse at 50% 0%,
+
             rgba(91, 141, 239, 0.14),
+
             transparent 60%
+
         );
+
 }
+
+
 
 body.dark-mode .project-card,
+
 body.dark-mode .learning-card,
+
 body.dark-mode .highlight,
+
 body.dark-mode .contact-link {
+
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+
 }
+
+
 
 body.dark-mode .project-card:hover,
+
 body.dark-mode .learning-card:hover,
+
 body.dark-mode .highlight:hover,
+
 body.dark-mode .contact-link:hover {
+
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+
 }
+
+
 
 /* 9. Respect reduced-motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
+
     html {
+
         scroll-behavior: auto;
+
     }
+
+
 
     *,
+
     *::before,
+
     *::after {
+
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
+
         scroll-behavior: auto !important;
+
     }
+
 }
 
+
+
 /* ========================================
+
    VINCI — FUTURISTIC HERO UPGRADE
+
 ======================================== */
+
+
 
 /* 1. Create a more immersive hero background */
+
 #hero {
+
     position: relative;
+
     isolation: isolate;
+
     overflow: hidden;
+
     background-image:
+
         radial-gradient(
+
             ellipse at 50% 0%,
+
             rgba(59, 130, 246, 0.13),
+
             transparent 55%
+
         ),
+
         linear-gradient(
+
             180deg,
+
             var(--surface),
+
             var(--page-bg)
+
         );
+
 }
+
+
 
 /* 2. Add a subtle futuristic ambient glow */
+
 #hero::before {
+
     content: "";
+
     position: absolute;
+
     z-index: -1;
+
     top: 5%;
+
     left: 50%;
+
     width: min(75vw, 760px);
+
     aspect-ratio: 1;
+
     transform: translateX(-50%);
+
     border-radius: 50%;
+
     background: radial-gradient(
+
         circle,
+
         rgba(59, 130, 246, 0.09),
+
         rgba(59, 130, 246, 0.025) 40%,
+
         transparent 70%
+
     );
+
     filter: blur(20px);
+
     pointer-events: none;
+
 }
+
+
 
 /* 3. Give the introduction label a technical feel */
+
 #hero .hero-intro {
+
     position: relative;
+
     border-color: rgba(59, 130, 246, 0.28);
+
     box-shadow:
+
         0 0 0 4px rgba(59, 130, 246, 0.025),
+
         0 8px 30px rgba(37, 99, 235, 0.06);
+
     animation: vinci-hero-enter 0.65s ease-out both;
+
 }
+
+
 
 /* 4. Strengthen the headline */
+
 #hero h2 {
+
     position: relative;
+
     max-width: 1000px;
+
     margin-top: 18px;
+
     font-weight: 750;
+
     line-height: 1.02;
+
     letter-spacing: -0.065em;
+
     text-wrap: balance;
+
     animation: vinci-hero-enter 0.75s ease-out 0.08s both;
+
 }
+
+
 
 /* 5. Refine the supporting text */
+
 #hero > p {
+
     animation: vinci-hero-enter 0.75s ease-out 0.16s both;
+
     line-height: 1.85;
+
 }
+
+
 
 /* 6. Make the calls to action feel more deliberate */
+
 #hero .hero-buttons {
+
     margin-top: 8px;
+
     animation: vinci-hero-enter 0.75s ease-out 0.24s both;
+
 }
+
+
 
 #hero .hero-buttons a {
+
     min-width: 155px;
+
     padding: 14px 24px;
+
     border-radius: 8px;
+
     font-weight: 600;
+
     letter-spacing: 0.01em;
+
 }
+
+
 
 #hero .hero-buttons a:first-child {
+
     box-shadow:
+
         0 5px 18px rgba(37, 99, 235, 0.15),
+
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
 }
+
+
 
 #hero .hero-buttons a:first-child:hover {
+
     box-shadow:
+
         0 10px 30px rgba(37, 99, 235, 0.23),
+
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
 }
+
+
 
 #hero .hero-buttons .secondary-button {
+
     border-width: 1px;
+
     border-color: var(--border);
+
 }
+
+
 
 #hero .hero-buttons .secondary-button:hover {
+
     border-color: var(--accent);
+
 }
+
+
 
 /* 7. Dark-mode atmosphere */
+
 body.dark-mode #hero {
+
     background-image:
+
         radial-gradient(
+
             ellipse at 50% 0%,
+
             rgba(91, 141, 239, 0.17),
+
             transparent 58%
+
         ),
+
         linear-gradient(
+
             180deg,
+
             var(--surface),
+
             var(--page-bg)
+
         );
+
 }
+
+
 
 body.dark-mode #hero::before {
+
     background: radial-gradient(
+
         circle,
+
         rgba(91, 141, 239, 0.13),
+
         rgba(91, 141, 239, 0.035) 42%,
+
         transparent 70%
+
     );
+
 }
+
+
 
 body.dark-mode #hero .hero-intro {
+
     border-color: rgba(168, 197, 255, 0.28);
+
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+
 }
+
+
 
 /* 8. Subtle entrance animation */
+
 @keyframes vinci-hero-enter {
+
     from {
+
         opacity: 0;
+
         transform: translateY(14px);
+
     }
+
+
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
+
     }
+
 }
+
+
 
 /* 9. Mobile refinement */
+
 @media (max-width: 768px) {
+
     #hero {
+
         padding-top: 85px;
+
         padding-bottom: 75px;
+
     }
+
+
 
     #hero h2 {
+
         letter-spacing: -0.05em;
+
         line-height: 1.08;
+
     }
+
+
 
     #hero .hero-buttons a {
+
         min-width: 145px;
+
     }
+
 }
+
+
 
 /* 10. Keep motion accessible */
+
 @media (prefers-reduced-motion: reduce) {
+
     #hero .hero-intro,
+
     #hero h2,
+
     #hero > p,
+
     #hero .hero-buttons {
+
         animation: none !important;
+
     }
+
 }
 
 
+
+
+
 /* ========================================
+
    VINCI — PREMIUM PROJECT CARD UPGRADE
+
 ======================================== */
 
+
+
 /* 1. Refined card surfaces */
+
 .project-card {
+
     position: relative;
+
     isolation: isolate;
+
     overflow: hidden;
+
     border: 1px solid var(--border);
+
     border-radius: 14px;
+
     background:
+
         linear-gradient(
+
             145deg,
+
             rgba(59, 130, 246, 0.035),
+
             transparent 48%
+
         ),
+
         var(--card-bg);
+
     box-shadow:
+
         0 4px 18px var(--card-shadow),
+
         inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
     transition:
+
         transform 0.28s ease,
+
         border-color 0.28s ease,
+
         box-shadow 0.28s ease;
+
 }
+
+
 
 /* 2. Subtle blue accent along the top */
+
 .project-card::before {
+
     content: "";
+
     position: absolute;
+
     z-index: -1;
+
     top: 0;
+
     left: 12%;
+
     width: 76%;
+
     height: 2px;
+
     background: linear-gradient(
+
         90deg,
+
         transparent,
+
         var(--accent),
+
         transparent
+
     );
+
     opacity: 0.3;
+
     transition:
+
         opacity 0.28s ease,
+
         left 0.28s ease,
+
         width 0.28s ease;
+
     pointer-events: none;
+
 }
+
+
 
 /* 3. Restrained interactive hover */
+
 .project-card:hover {
+
     transform: translateY(-6px);
+
     border-color: var(--accent);
+
     box-shadow:
+
         0 18px 42px rgba(17, 24, 39, 0.12),
+
         0 0 22px rgba(37, 99, 235, 0.055);
+
 }
+
+
 
 .project-card:hover::before {
+
     left: 0;
+
     width: 100%;
+
     opacity: 0.9;
+
 }
+
+
 
 /* 4. Clearer project category label */
+
 .project-card .project-type {
+
     display: inline-block;
+
     margin-bottom: 14px;
+
     padding: 5px 9px;
+
     border: 1px solid var(--border);
+
     border-radius: 5px;
+
     background: var(--surface);
+
     font-size: 0.72rem;
+
     letter-spacing: 0.09em;
+
 }
+
+
 
 /* 5. Stronger title hierarchy */
+
 .project-card h3 {
+
     line-height: 1.35;
+
     letter-spacing: -0.025em;
+
     transition: color 0.25s ease;
+
 }
+
+
 
 .project-card:hover h3 {
+
     color: var(--accent);
+
 }
+
+
 
 /* 6. Improve feature-list readability */
+
 .project-card .project-features {
+
     padding-left: 21px;
+
 }
+
+
 
 .project-card .project-features li {
+
     padding-left: 3px;
+
     margin-bottom: 10px;
+
 }
+
+
 
 .project-card .project-features li::marker {
+
     color: var(--accent);
+
 }
+
+
 
 /* 7. Make technology labels easier to scan */
+
 .project-card .technologies {
+
     line-height: 1.9;
+
     overflow-wrap: anywhere;
+
 }
+
+
 
 /* 8. Refine project action links */
+
 .project-card .project-links {
+
     align-items: center;
+
     gap: 10px;
+
 }
+
+
 
 .project-card .project-links a {
+
     border: 1px solid transparent;
+
     border-radius: 6px;
+
     font-weight: 600;
+
     transition:
+
         transform 0.22s ease,
+
         background-color 0.22s ease,
+
         border-color 0.22s ease,
+
         box-shadow 0.22s ease;
+
 }
+
+
 
 .project-card .project-links a:hover {
+
     transform: translateY(-2px);
+
     border-color: var(--accent);
+
     box-shadow: 0 5px 16px rgba(37, 99, 235, 0.12);
+
 }
+
+
 
 /* 9. Dark-mode card finish */
+
 body.dark-mode .project-card {
+
     background:
+
         linear-gradient(
+
             145deg,
+
             rgba(168, 197, 255, 0.045),
+
             transparent 52%
+
         ),
+
         var(--card-bg);
+
     box-shadow:
+
         0 8px 24px rgba(0, 0, 0, 0.12),
+
         inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
 }
+
+
 
 body.dark-mode .project-card:hover {
+
     border-color: rgba(168, 197, 255, 0.65);
+
     box-shadow:
+
         0 18px 42px rgba(0, 0, 0, 0.28),
+
         0 0 24px rgba(91, 141, 239, 0.07);
+
 }
+
+
 
 body.dark-mode .project-card .project-type {
+
     background: var(--surface);
+
     border-color: var(--border);
+
 }
+
+
 
 body.dark-mode .project-card .project-links a:hover {
+
     box-shadow: 0 5px 18px rgba(91, 141, 239, 0.12);
+
 }
+
+
 
 /* 10. Keep the interaction comfortable on touchscreens */
+
 @media (hover: none) {
+
     .project-card:hover {
+
         transform: none;
+
     }
+
+
 
     .project-card:hover::before {
+
         left: 12%;
+
         width: 76%;
+
         opacity: 0.3;
+
     }
+
+
 
     .project-card:hover h3 {
+
         color: var(--heading);
+
     }
+
 }
+
+
 
 /* 11. Respect reduced-motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
+
     .project-card,
+
     .project-card::before,
+
     .project-card h3,
+
     .project-card .project-links a {
+
         transition: none !important;
+
     }
+
+
 
     .project-card:hover,
+
     .project-card .project-links a:hover {
+
         transform: none;
+
     }
+
 }
 
+
+
 /* ========================================
+
    VINCI — PREMIUM PROJECT CARD UPGRADE
+
 ======================================== */
 
+
+
 /* 1. Refined card surfaces */
+
 .project-card {
+
     position: relative;
+
     isolation: isolate;
+
     overflow: hidden;
+
     border: 1px solid var(--border);
+
     border-radius: 14px;
+
     background:
+
         linear-gradient(
+
             145deg,
+
             rgba(59, 130, 246, 0.035),
+
             transparent 48%
+
         ),
+
         var(--card-bg);
+
     box-shadow:
+
         0 4px 18px var(--card-shadow),
+
         inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
     transition:
+
         transform 0.28s ease,
+
         border-color 0.28s ease,
+
         box-shadow 0.28s ease;
+
 }
+
+
 
 /* 2. Subtle blue accent along the top */
+
 .project-card::before {
+
     content: "";
+
     position: absolute;
+
     z-index: -1;
+
     top: 0;
+
     left: 12%;
+
     width: 76%;
+
     height: 2px;
+
     background: linear-gradient(
+
         90deg,
+
         transparent,
+
         var(--accent),
+
         transparent
+
     );
+
     opacity: 0.3;
+
     transition:
+
         opacity 0.28s ease,
+
         left 0.28s ease,
+
         width 0.28s ease;
+
     pointer-events: none;
+
 }
+
+
 
 /* 3. Restrained interactive hover */
+
 .project-card:hover {
+
     transform: translateY(-6px);
+
     border-color: var(--accent);
+
     box-shadow:
+
         0 18px 42px rgba(17, 24, 39, 0.12),
+
         0 0 22px rgba(37, 99, 235, 0.055);
+
 }
+
+
 
 .project-card:hover::before {
+
     left: 0;
+
     width: 100%;
+
     opacity: 0.9;
+
 }
+
+
 
 /* 4. Clearer project category label */
+
 .project-card .project-type {
+
     display: inline-block;
+
     margin-bottom: 14px;
+
     padding: 5px 9px;
+
     border: 1px solid var(--border);
+
     border-radius: 5px;
+
     background: var(--surface);
+
     font-size: 0.72rem;
+
     letter-spacing: 0.09em;
+
 }
+
+
 
 /* 5. Stronger title hierarchy */
+
 .project-card h3 {
+
     line-height: 1.35;
+
     letter-spacing: -0.025em;
+
     transition: color 0.25s ease;
+
 }
+
+
 
 .project-card:hover h3 {
+
     color: var(--accent);
+
 }
+
+
 
 /* 6. Improve feature-list readability */
+
 .project-card .project-features {
+
     padding-left: 21px;
+
 }
+
+
 
 .project-card .project-features li {
+
     padding-left: 3px;
+
     margin-bottom: 10px;
+
 }
+
+
 
 .project-card .project-features li::marker {
+
     color: var(--accent);
+
 }
+
+
 
 /* 7. Make technology labels easier to scan */
+
 .project-card .technologies {
+
     line-height: 1.9;
+
     overflow-wrap: anywhere;
+
 }
+
+
 
 /* 8. Refine project action links */
+
 .project-card .project-links {
+
     align-items: center;
+
     gap: 10px;
+
 }
+
+
 
 .project-card .project-links a {
+
     border: 1px solid transparent;
+
     border-radius: 6px;
+
     font-weight: 600;
+
     transition:
+
         transform 0.22s ease,
+
         background-color 0.22s ease,
+
         border-color 0.22s ease,
+
         box-shadow 0.22s ease;
+
 }
+
+
 
 .project-card .project-links a:hover {
+
     transform: translateY(-2px);
+
     border-color: var(--accent);
+
     box-shadow: 0 5px 16px rgba(37, 99, 235, 0.12);
+
 }
+
+
 
 /* 9. Dark-mode card finish */
+
 body.dark-mode .project-card {
+
     background:
+
         linear-gradient(
+
             145deg,
+
             rgba(168, 197, 255, 0.045),
+
             transparent 52%
+
         ),
+
         var(--card-bg);
+
     box-shadow:
+
         0 8px 24px rgba(0, 0, 0, 0.12),
+
         inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
 }
+
+
 
 body.dark-mode .project-card:hover {
+
     border-color: rgba(168, 197, 255, 0.65);
+
     box-shadow:
+
         0 18px 42px rgba(0, 0, 0, 0.28),
+
         0 0 24px rgba(91, 141, 239, 0.07);
+
 }
+
+
 
 body.dark-mode .project-card .project-type {
+
     background: var(--surface);
+
     border-color: var(--border);
+
 }
+
+
 
 body.dark-mode .project-card .project-links a:hover {
+
     box-shadow: 0 5px 18px rgba(91, 141, 239, 0.12);
+
 }
+
+
 
 /* 10. Keep the interaction comfortable on touchscreens */
+
 @media (hover: none) {
+
     .project-card:hover {
+
         transform: none;
+
     }
+
+
 
     .project-card:hover::before {
+
         left: 12%;
+
         width: 76%;
+
         opacity: 0.3;
+
     }
+
+
 
     .project-card:hover h3 {
+
         color: var(--heading);
+
     }
+
 }
+
+
 
 /* 11. Respect reduced-motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
+
     .project-card,
+
     .project-card::before,
+
     .project-card h3,
+
     .project-card .project-links a {
+
         transition: none !important;
+
     }
+
+
 
     .project-card:hover,
+
     .project-card .project-links a:hover {
+
         transform: none;
+
     }
+
 }
 
+
+
 /* ========================================
+
    VINCI — FINAL RESPONSIVE & ACCESSIBILITY PASS
+
 ======================================== */
+
+
 
 /* 1. Prevent unwanted horizontal overflow */
+
 html,
+
 body {
+
     max-width: 100%;
+
     overflow-x: clip;
+
 }
+
+
 
 img,
+
 video,
+
 iframe {
+
     max-width: 100%;
+
 }
+
+
 
 /* 2. Keep content readable on wide screens */
+
 section > *,
+
 #hero > * {
+
     min-width: 0;
+
 }
+
+
 
 #about,
+
 #skills,
+
 #projects,
+
 #certifications,
+
 #contact {
+
     scroll-margin-top: 100px;
+
 }
+
+
 
 /* 3. Improve project and learning grid consistency */
+
 .project-container,
+
 .learning-container {
+
     align-items: stretch;
+
 }
+
+
 
 .project-card,
+
 .learning-card {
+
     min-width: 0;
+
     overflow-wrap: anywhere;
+
 }
+
+
 
 /* 4. Keep interactive elements visually consistent */
+
 a,
-button {
-    touch-action: manipulation;
-}
 
 button {
-    cursor: pointer;
+
+    touch-action: manipulation;
+
 }
+
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
 
 a:focus-visible,
+
 button:focus-visible {
+
     outline: 2px solid var(--accent);
+
     outline-offset: 4px;
+
 }
+
+
 
 /* 5. Keep the welcome popup usable on smaller screens */
+
 .dark-mode-overlay {
+
     overflow-y: auto;
+
     overscroll-behavior: contain;
+
 }
+
+
 
 .dark-mode-popup {
+
     max-height: calc(100vh - 40px);
+
     max-height: calc(100svh - 40px);
+
     overflow-y: auto;
+
 }
+
+
 
 /* 6. Tablet refinement */
+
 @media (max-width: 1000px) {
+
     section {
+
         padding-left: 5%;
+
         padding-right: 5%;
+
     }
+
+
 
     .about-content,
+
     .contact-container {
+
         gap: 28px;
+
     }
 
+
+
     .project-container,
+
     .learning-container {
+
         gap: 20px;
+
     }
+
 }
+
+
 
 /* 7. Mobile refinement */
+
 @media (max-width: 768px) {
+
     header {
+
         padding: 16px 5%;
+
     }
+
+
 
     nav {
+
         width: 100%;
+
     }
 
+
+
     nav ul {
+
         max-width: 100%;
+
     }
+
+
 
     section {
+
         padding: 48px 6%;
+
     }
+
+
 
     .project-container,
+
     .learning-container,
+
     .about-content,
+
     .contact-container {
+
         grid-template-columns: minmax(0, 1fr);
+
     }
 
+
+
     .project-card,
+
     .learning-card {
+
         padding: 24px;
+
     }
+
+
 
     .hero-buttons {
+
         align-items: center;
+
     }
+
+
 
     .dark-mode-popup {
+
         width: 100%;
+
     }
+
 }
+
+
 
 /* 8. Small-screen refinements */
+
 @media (max-width: 480px) {
+
     nav ul {
+
         column-gap: 12px;
+
         row-gap: 10px;
+
     }
+
+
 
     .project-card,
+
     .learning-card {
+
         padding: 20px;
+
     }
+
+
 
     .project-links {
+
         gap: 10px;
+
     }
+
+
 
     .project-links a {
+
         max-width: 100%;
+
         overflow-wrap: anywhere;
+
     }
+
+
 
     .hero-buttons a {
+
         max-width: 100%;
+
     }
+
 }
+
+
 
 /* 9. Disable hover-only movement on touchscreens */
+
 @media (hover: none) {
+
     .project-card:hover,
+
     .learning-card:hover,
+
     .highlight:hover,
+
     .contact-link:hover,
+
     #skills li:hover {
+
         transform: none;
+
     }
+
 }
 
+
+
 /* 10. Respect reduced-motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
+
     html {
+
         scroll-behavior: auto;
+
     }
+
+
 
     *,
+
     *::before,
+
     *::after {
+
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
+
         scroll-behavior: auto !important;
+
     }
 
+
+
     .project-card:hover,
+
     .learning-card:hover,
+
     .highlight:hover,
+
     .contact-link:hover,
+
     #skills li:hover,
+
     .hero-buttons a:hover,
+
     .project-links a:hover {
+
         transform: none;
+
     }
+
+}
+
+
+/* ========================================
+   VINCI CONTINUOUS CLOUD ENVIRONMENT
+   One CSS-generated scene for both themes
+======================================== */
+html {
+    background: #b9ddf2;
+}
+body {
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+}
+.cloud-world {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    isolation: isolate;
+    background: linear-gradient(180deg, #82c7f0 0%, #d8effb 48%, #f7fbff 100%);
+    transition: background 700ms ease, filter 700ms ease;
+    --cloud-opacity: .78;
+}
+.cloud-world::before,
+.cloud-world::after {
+    content: "";
+    position: absolute;
+    inset: -12%;
+    pointer-events: none;
+    background-repeat: repeat;
+    will-change: transform;
+}
+.cloud-world::before {
+    opacity: .5;
+    background-image: radial-gradient(ellipse at 18% 72%, rgba(255,255,255,.96) 0 7%, transparent 24%), radial-gradient(ellipse at 43% 84%, rgba(255,255,255,.88) 0 10%, transparent 28%), radial-gradient(ellipse at 76% 69%, rgba(255,255,255,.92) 0 8%, transparent 25%), radial-gradient(ellipse at 92% 88%, rgba(255,255,255,.85) 0 10%, transparent 28%);
+    background-size: 100% 100%;
+    filter: blur(14px);
+    animation: cloud-drift-back 48s ease-in-out infinite alternate;
+}
+.cloud-world::after {
+    opacity: .42;
+    background: radial-gradient(ellipse at 25% 100%, #fff 0 12%, transparent 38%), radial-gradient(ellipse at 70% 105%, #fff 0 16%, transparent 42%);
+    filter: blur(24px);
+    animation: cloud-drift-front 32s ease-in-out infinite alternate;
+}
+.cloud-stars {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 700ms ease;
+    background-image: radial-gradient(1.5px 1.5px at 12% 18%, #fff 98%, transparent), radial-gradient(1px 1px at 26% 38%, #fff 98%, transparent), radial-gradient(2px 2px at 72% 20%, #fff 98%, transparent), radial-gradient(1px 1px at 86% 44%, #fff 98%, transparent), radial-gradient(1.5px 1.5px at 58% 12%, #fff 98%, transparent), radial-gradient(1px 1px at 42% 28%, #fff 98%, transparent), radial-gradient(1.5px 1.5px at 93% 12%, #fff 98%, transparent);
+    background-size: 360px 260px;
+}
+.cloud-layer {
+    position: absolute;
+    inset: -18%;
+    will-change: transform;
+    background-repeat: repeat;
+    transition: filter 700ms ease, opacity 700ms ease;
+}
+.cloud-layer-back {
+    opacity: .42;
+    background-image: radial-gradient(ellipse at 15% 60%, rgba(255,255,255,.75) 0 8%, transparent 28%), radial-gradient(ellipse at 58% 45%, rgba(255,255,255,.65) 0 10%, transparent 30%), radial-gradient(ellipse at 88% 62%, rgba(255,255,255,.7) 0 8%, transparent 27%);
+    filter: blur(24px);
+}
+.cloud-layer-mid {
+    opacity: .56;
+    background-image: radial-gradient(ellipse at 12% 82%, rgba(255,255,255,.92) 0 9%, transparent 28%), radial-gradient(ellipse at 48% 76%, rgba(255,255,255,.85) 0 11%, transparent 31%), radial-gradient(ellipse at 84% 84%, rgba(255,255,255,.9) 0 10%, transparent 30%);
+    filter: blur(16px);
+}
+.cloud-layer-front {
+    opacity: .55;
+    background-image: radial-gradient(ellipse at 5% 108%, #fff 0 17%, transparent 40%), radial-gradient(ellipse at 42% 110%, #fff 0 20%, transparent 44%), radial-gradient(ellipse at 78% 108%, #fff 0 18%, transparent 42%), radial-gradient(ellipse at 100% 100%, #fff 0 16%, transparent 40%);
+    filter: blur(10px);
+}
+.cloud-lightning {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: rgba(210, 232, 255, .16);
+    transition: opacity 80ms linear;
+}
+.cloud-lightning.flash { opacity: 1; }
+/* Transparent section surfaces let the same cloud scene remain visible throughout. */
+#hero, #about, #skills, #projects, #certifications, #contact {
+    background-color: transparent;
+}
+#hero { background-image: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.2)); }
+.about-highlights .highlight, .project-card, .learning-card, #skills li, .contact-link {
+    backdrop-filter: blur(10px);
+}
+.project-card, .learning-card, .highlight, #skills li, .contact-link {
+    background-color: rgba(255,255,255,.72);
+}
+body.dark-mode {
+    color-scheme: dark;
+}
+body.dark-mode .cloud-world {
+    background: linear-gradient(180deg, #050914 0%, #101d35 42%, #263a54 100%);
+    --cloud-opacity: .5;
+}
+body.dark-mode .cloud-stars { opacity: .95; }
+body.dark-mode .cloud-world::before {
+    opacity: .25;
+    background-image: radial-gradient(ellipse at 18% 78%, rgba(160,190,220,.7) 0 8%, transparent 25%), radial-gradient(ellipse at 48% 86%, rgba(115,145,180,.6) 0 11%, transparent 29%), radial-gradient(ellipse at 82% 75%, rgba(165,190,220,.7) 0 9%, transparent 27%);
+}
+body.dark-mode .cloud-world::after {
+    opacity: .28;
+    background: radial-gradient(ellipse at 25% 100%, #aabdd3 0 12%, transparent 38%), radial-gradient(ellipse at 70% 105%, #718ba9 0 16%, transparent 42%);
+}
+body.dark-mode .cloud-layer-back { opacity: .25; filter: blur(28px) brightness(.75); }
+body.dark-mode .cloud-layer-mid { opacity: .28; filter: blur(20px) brightness(.72); }
+body.dark-mode .cloud-layer-front { opacity: .32; filter: blur(14px) brightness(.72); }
+body.dark-mode .cloud-lightning { background: rgba(210,230,255,.13); }
+body.dark-mode .project-card, body.dark-mode .learning-card, body.dark-mode .highlight, body.dark-mode #skills li, body.dark-mode .contact-link {
+    background-color: rgba(15, 23, 42, .72);
+}
+.cloud-world.moving-down .cloud-layer-back { animation: cloud-descend-back 1.1s ease-out; }
+.cloud-world.moving-down .cloud-layer-mid { animation: cloud-descend-mid .8s ease-out; }
+.cloud-world.moving-down .cloud-layer-front { animation: cloud-descend-front .6s ease-out; }
+.cloud-world.moving-up .cloud-layer-back { animation: cloud-ascend-back 1.1s ease-out; }
+.cloud-world.moving-up .cloud-layer-mid { animation: cloud-ascend-mid .8s ease-out; }
+.cloud-world.moving-up .cloud-layer-front { animation: cloud-ascend-front .6s ease-out; }
+.cloud-world.flight-forward .cloud-layer { animation: cloud-forward .85s ease-out; }
+.cloud-world.flight-reverse .cloud-layer { animation: cloud-reverse .85s ease-out; }
+@keyframes cloud-drift-back { to { transform: translate3d(2%, -1%, 0); } }
+@keyframes cloud-drift-front { to { transform: translate3d(-2%, 1.5%, 0) scale(1.03); } }
+@keyframes cloud-descend-back { to { transform: translate3d(0, -2.5%, 0); } }
+@keyframes cloud-descend-mid { to { transform: translate3d(0, -5%, 0) scale(1.04); } }
+@keyframes cloud-descend-front { to { transform: translate3d(0, -8%, 0) scale(1.08); } }
+@keyframes cloud-ascend-back { to { transform: translate3d(0, 2.5%, 0); } }
+@keyframes cloud-ascend-mid { to { transform: translate3d(0, 5%, 0) scale(1.04); } }
+@keyframes cloud-ascend-front { to { transform: translate3d(0, 8%, 0) scale(1.08); } }
+@keyframes cloud-forward { to { transform: scale(1.18) translate3d(0, 2%, 0); filter: blur(22px); } }
+@keyframes cloud-reverse { to { transform: scale(.94) translate3d(0, -1%, 0); } }
+@media (prefers-reduced-motion: reduce) {
+    .cloud-world::before, .cloud-world::after { animation: none !important; }
+    .cloud-world.moving-down .cloud-layer, .cloud-world.moving-up .cloud-layer, .cloud-world.flight-forward .cloud-layer, .cloud-world.flight-reverse .cloud-layer { animation: none !important; }
 }

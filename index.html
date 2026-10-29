@@ -14,6 +14,17 @@
 
 <body>
 
+    <!-- Persistent cloud environment: one scene for both themes and all motion -->
+    <div class="cloud-world" id="cloudWorld" aria-hidden="true">
+        <div class="cloud-stars"></div>
+        <div class="cloud-layer cloud-layer-back"></div>
+        <div class="cloud-layer cloud-layer-mid"></div>
+        <div class="cloud-layer cloud-layer-front"></div>
+        <div class="cloud-lightning"></div>
+    </div>
+
+
+
     <!-- HEADER -->
     <header>
         <nav>
@@ -237,6 +248,55 @@
                                 rel="noopener noreferrer"
                             >
                                 My GitHub ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BEANBLOOM COFFEE STOREFRONT -->
+                <article class="project-card">
+                    <div class="project-content">
+                        <p class="project-type">E-COMMERCE • FRONTEND DEVELOPMENT</p>
+
+                        <h3>BeanBloom — Coffee Storefront</h3>
+
+                        <p>
+                            A modern coffee storefront built with React, TypeScript,
+                            Vite and CSS. Visitors can explore coffee products, add
+                            items to a shopping bag, adjust quantities and enter
+                            delivery details through a checkout interface.
+                        </p>
+
+                        <ul class="project-features">
+                            <li>Interactive shopping cart and quantity controls</li>
+                            <li>Automatic product subtotal calculation</li>
+                            <li>Checkout form with Nigerian delivery address fields</li>
+                            <li>Bank card, bank transfer and USSD options in the interface</li>
+                            <li>Cart contents saved in browser storage</li>
+                        </ul>
+
+                        <p class="technologies">React • TypeScript • Vite • CSS • Git • GitHub</p>
+
+                        <p class="project-note">
+                            Payment methods are interface options only; live payments
+                            and order processing are not connected.
+                        </p>
+
+                        <div class="project-links">
+                            <a
+                                href="https://timivincent9-collab.github.io/BeanBloom/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/timivincent9-collab/BeanBloom"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Source Code ↗
                             </a>
                         </div>
                     </div>
@@ -514,6 +574,74 @@
                     closeButton.focus();
                 }
             });
+        })();
+    </script>
+
+
+    <!-- Cloud movement controller: scroll direction + forward/reverse navigation -->
+    <script>
+        (() => {
+            const world = document.getElementById("cloudWorld");
+            if (!world) return;
+
+            let previousY = window.scrollY;
+            let scrollFrame = null;
+            let flightTimer = null;
+            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+            function setScrollDirection() {
+                const currentY = window.scrollY;
+                if (Math.abs(currentY - previousY) > 2) {
+                    world.classList.toggle("moving-down", currentY > previousY);
+                    world.classList.toggle("moving-up", currentY < previousY);
+                }
+                previousY = currentY;
+                scrollFrame = null;
+            }
+
+            window.addEventListener("scroll", () => {
+                if (!scrollFrame && !reducedMotion.matches) {
+                    scrollFrame = window.requestAnimationFrame(setScrollDirection);
+                }
+            }, { passive: true });
+
+            // Internal section links fly forward; browser back/forward reverses the effect.
+            document.querySelectorAll('a[href^="#"]').forEach((link) => {
+                link.addEventListener("click", () => {
+                    if (reducedMotion.matches) return;
+                    world.classList.remove("flight-reverse");
+                    world.classList.add("flight-forward");
+                    window.clearTimeout(flightTimer);
+                    flightTimer = window.setTimeout(() => world.classList.remove("flight-forward"), 850);
+                });
+            });
+
+            window.addEventListener("popstate", () => {
+                if (reducedMotion.matches) return;
+                world.classList.remove("flight-forward");
+                world.classList.add("flight-reverse");
+                window.clearTimeout(flightTimer);
+                flightTimer = window.setTimeout(() => world.classList.remove("flight-reverse"), 850);
+            });
+
+            // Very subtle, occasional distant lightning in dark mode only.
+            const lightning = world.querySelector(".cloud-lightning");
+            let lightningTimer;
+            function scheduleLightning() {
+                window.clearTimeout(lightningTimer);
+                if (document.body.classList.contains("dark-mode") && !reducedMotion.matches) {
+                    lightningTimer = window.setTimeout(() => {
+                        if (document.body.classList.contains("dark-mode")) {
+                            lightning.classList.add("flash");
+                            window.setTimeout(() => lightning.classList.remove("flash"), 180);
+                        }
+                        scheduleLightning();
+                    }, 12000 + Math.random() * 18000);
+                }
+            }
+            const themeObserver = new MutationObserver(scheduleLightning);
+            themeObserver.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+            scheduleLightning();
         })();
     </script>
 
