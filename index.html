@@ -5,30 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#111827">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
     <title>Olorunfemi Timilehin Vincent | Web Developer</title>
     <meta name="description" content="Explore my web development portfolio, projects, skills, and learning journey.">
 
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Persistent cloud environment: one scene for both themes and all motion -->
-    <div class="cloud-world" id="cloudWorld" aria-hidden="true">
-        <div class="cloud-stars"></div>
-        <div class="cloud-layer cloud-layer-back"></div>
-        <div class="cloud-layer cloud-layer-mid"></div>
-        <div class="cloud-layer cloud-layer-front"></div>
-        <div class="cloud-lightning"></div>
-    </div>
+   
+<!-- Persistent cloud environment -->
+<div class="cloud-world" id="cloudWorld" aria-hidden="true">
+    <div class="cloud-stars"></div>
+    <div class="cloud-layer cloud-layer-back"></div>
+    <div class="cloud-layer cloud-layer-mid"></div>
+    <div class="cloud-layer cloud-layer-front"></div>
+    <div class="cloud-lightning"></div>
+</div>
 
+<!-- CHRISTMAS EFFECTS -->
+<div
+    class="christmas-snow"
+    id="christmasSnow"
+    aria-hidden="true"
+></div>
+
+<!-- CHRISTMAS LIGHTS -->
+<div class="christmas-lights" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
 
     <!-- HEADER -->
     <header>
         <nav>
-            <h1>Olorunfemi Timilehin Vincent</h1>
+            <a href="#hero" class="brand-logo" aria-label="Vinci home">
+    <img src="assets/favicon.png" alt="">
+    <span>VINCI<span class="brand-dot">.</span></span>
+</a>
 
             <ul>
                 <li><a href="#about">About</a></li>
@@ -56,7 +87,7 @@
         <section id="hero">
             <p class="hero-intro">Hello, I'm Vincent</p>
 
-            <h2>Junior Web Developer</h2>
+            <h2>Responsive Website Developer</h2>
 
             <p>
                 I build responsive, accessible and user-friendly websites
@@ -69,68 +100,81 @@
             </div>
         </section>
 
-        <!-- ABOUT -->
-        <section id="about">
-            <h2>About Me</h2>
+        
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Me</h2>
 
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm an aspiring web developer developing my skills
-                        through practical projects and structured learning.
-                    </p>
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+                My name is <strong>Olorunfemi Timilehin Vincent</strong>,
+                an aspiring web developer passionate about building
+                modern, responsive and accessible digital experiences.
+            </p>
 
-                    <p>
-                        My journey began with
-                        <span class="accent-text">HTML</span>
-                        and responsive web design, followed by
-                        <span class="accent-text">CSS</span>.
-                    </p>
+            <p>
+                My development journey started with
+                <span class="accent-text">HTML and CSS</span>,
+                where I developed a foundation in web structure,
+                styling and responsive design.
+            </p>
 
-                    <p>
-                        I'm continuing to expand my knowledge of JavaScript,
-                        React, and other modern web technologies as I progress.
-                    </p>
+            <p>
+                I actively strengthen my skills through practical
+                projects, structured learning and experimentation
+                with modern web technologies, including
+                <span class="accent-text">JavaScript and React</span>.
+            </p>
 
-                    <p>
-                        I enjoy turning ideas into useful digital experiences
-                        and solving problems through technology.
-                    </p>
-                </div>
+            <p>
+                I enjoy transforming ideas into functional digital
+                products, exploring new technologies and finding
+                creative solutions to everyday problems.
+            </p>
+        </div>
 
-                <div class="about-highlights">
-                    <div class="highlight">
-                        <h3>Currently Learning</h3>
-                        <p>HTML, CSS and JavaScript</p>
-                    </div>
-
-                    <div class="highlight">
-                        <h3>Development Tools</h3>
-                        <p>VS Code, Git and GitHub</p>
-                    </div>
-
-                    <div class="highlight">
-                        <h3>My Goal</h3>
-                        <p>Become a professional web developer</p>
-                    </div>
-                </div>
+        <div class="about-highlights">
+            <div class="highlight">
+                <h3>Current Focus</h3>
+                <p>HTML, CSS, JavaScript and React</p>
             </div>
-        </section>
 
-        <!-- SKILLS -->
-        <section id="skills">
-            <h2>Skills</h2>
+            <div class="highlight">
+                <h3>Development Toolkit</h3>
+                <p>VS Code, Git and GitHub</p>
+            </div>
 
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Responsive Web Design</li>
-                <li>Web Accessibility</li>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>JavaScript — Learning</li>
-            </ul>
-        </section>
+            <div class="highlight">
+                <h3>Professional Goal</h3>
+                <p>Building useful, accessible and reliable web applications</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Skills & Technologies</h2>
+
+    <p class="section-intro">
+        Technologies and tools I'm learning and using
+        to build practical web development projects.
+    </p>
+
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>Responsive Web Design</li>
+        <li>Web Accessibility</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>VS Code</li>
+    </ul>
+</section>
+
 
         <!-- PROJECTS -->
         <section id="projects">
@@ -644,6 +688,42 @@
             scheduleLightning();
         })();
     </script>
+<!-- CHRISTMAS SNOW GENERATOR -->
+<script>
+(() => {
+    const snowContainer = document.getElementById("christmasSnow");
+    if (!snowContainer) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
+
+    const isSmallScreen = window.matchMedia("(max-width: 600px)").matches;
+    const snowflakeCount = isSmallScreen ? 28 : 55;
+    const snowSymbols = ["❄", "❅", "❆", "·"];
+
+    for (let i = 0; i < snowflakeCount; i++) {
+        const flake = document.createElement("span");
+        flake.className = "snowflake";
+        flake.textContent = snowSymbols[
+            Math.floor(Math.random() * snowSymbols.length)
+        ];
+
+        const size = 7 + Math.random() * 13;
+        const duration = 9 + Math.random() * 15;
+        const delay = Math.random() * -20;
+        const drift = `${-45 + Math.random() * 90}px`;
+
+        flake.style.left = `${Math.random() * 100}%`;
+        flake.style.fontSize = `${size}px`;
+        flake.style.animationDuration = `${duration}s`;
+        flake.style.animationDelay = `${delay}s`;
+        flake.style.setProperty("--snow-drift", drift);
+        flake.style.opacity = `${0.25 + Math.random() * 0.6}`;
+
+        snowContainer.appendChild(flake);
+    }
+})();
+</script>
 
 </body>
 </html>
